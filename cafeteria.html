@@ -1,0 +1,153 @@
+
+<?php  
+        session_start();
+
+        if(!isset($_SESSION['usuario'])){
+            echo '
+                <script>
+                    alert("Por favor debes iniciar sesión");
+                    window.location = "index.html";
+                </script>
+            ';
+            session_destroy();
+            die();
+        }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFETERIA - ISABELLE</title>
+    <link rel="icon" href="logo.ico">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><img src="img/logo.png" alt=""></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#compra">Compra</a></li>
+            <li><a href="#app">App</a></li>
+            <li><a href="#acercade">Acerca de</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="php/cerrarsesion.php">Cerrar sesion</a></li>
+        </ul>
+
+    </header>
+    <section class="home" id="home">
+        <div class="home-text">
+            <span>Bienvenido</span>
+            <h1>Isabelle Cafeteria</h1>
+            <h2>Cafe de calidad <br>Al mejor precio</h2>
+        </div>
+        <div class="home-img">
+            <img src="img/home.png" alt="">
+        </div>
+    </section>
+    
+    <!--COMPRA - CONTENEDOR-->
+    <section class="compra" id="compra">
+    <div class="heading">
+        <span>Compra Ahora</span>
+        <h1>Disfruta Nuestro Menú</h1>
+    </div> <br>
+    <body>
+        <!---------->
+        <style>
+            .shop-container {
+                display: flex;
+                justify-content: space-between;
+            }
+        
+            .box {
+                flex: 1;
+                margin: 0 10px;
+            }
+        </style>
+        
+        <div class="shop-container">
+            <div class="box" onclick="window.location.href='cafe.html'">
+                <div class="box-img">
+                    <img src="img/cafés.jpg" alt="Café">
+                </div>
+                <h2>Cafés</h2>
+                <p>Descubre la excelencia en cada taza en Isabelle Cafetería, ofrecemos café de calidad superior a un precio inigualable, brindando una experiencia deliciosa para los amantes del café. Disfruta de nuestro aroma único y sabor inigualable en cada sorbo.</p>
+            </div>
+            <div class="box" onclick="window.location.href='postres.html'">
+                <div class="box-img">
+                    <img src="img/postres.jpg" alt="Postres">
+                </div>
+                <h2>Postres</h2>
+                <p>Disfruta de una experiencia dulce inigualable en Isabelle Cafetería, nuestros postres de calidad superior cautivan con su exquisito sabor y presentación encantadora. Ofrecemos lo mejor a un precio asequible, permitiéndote satisfacer tus antojos sin romper tu bolsillo. Sumérgete en un mundo de delicias irresistibles.</p>
+            </div>
+            <div class="box" onclick="window.location.href='pasteles.html'">
+                <div class="box-img">
+                    <img src="img/pasteles.jpg" alt="Pasteles">
+                </div>
+                <h2>Pasteles</h2>
+                <p>Los pasteles de Isabelle Cafetería son sinónimo de calidad excepcional y frescura, desde clásicos hasta creaciones personalizadas, cada pastel ofrece un sabor inigualable y encantadores diseños para cada ocasión.</p>
+            </div>
+        </div>
+        </section>
+
+    <!--APLICACION-->
+    <section class="app" id="app">
+        <div class="heading">
+            <span>Nuestra Aplicacion</span>
+            <h1>Descarga la App</h1>
+        </div>
+        <div class="container">
+            <div class="app-text">
+                <h2>Modernizando nuestros sistemas</h2>
+                <p>La Cafetería Isabelle revoluciona la experiencia del cliente con su aplicación ultramoderna. Desde pedidos rápidos hasta programas de fidelidad, 
+                    esta app eficiente ofrece comodidad sin igual. Explora nuestro menú, haz pedidos sin esfuerzo y disfruta de la calidad excepcional, todo al alcance de tu mano.</p>
+                <p>Además, la aplicación de Cafetería Isabelle ofrece actualizaciones en tiempo real sobre promociones y eventos especiales. La interfaz intuitiva y segura garantiza transacciones sin problemas. 
+                    Únete a nuestra comunidad digital y descubre una nueva forma emocionante de disfrutar de tus momentos de café.</p><br>
+                <a href="#" class="btn">Obten la App</a>
+            </div>
+            <div class="app-img">
+                <img src="img/app.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!--ACERCA DE-->
+    <section class="acercade" id="acercade">
+        <div class="acercade-img">
+            <img src="img/acercade.png" alt="">
+        </div>
+        <div class="acercade-text">
+            <h2>Conocenos a Nosotros</h2><br>
+            <p>La cafetería Isabelle, un encantador rincón delicioso y acogedor, ha florecido en solo 6 meses desde su apertura. Inicialmente un modesto emprendimiento, 
+                se ha convertido en un vibrante centro social para amantes del café. Con su atmósfera cálida y personalizada, Isabelle ha ganado rápidamente corazones ofreciendo café de calidad y deliciosos pasteles caseros. 
+                Su crecimiento meteórico es testimonio de su pasión por la excelencia y la dedicación incansable hacia sus clientes.</p>
+            <p>La emprendedora detrás de este éxito inspirador es Sandra Nicol Vargas Ocampo, su visión audaz y habilidades culinarias han transformado la Cafetería Isabelle en un destino gastronómico inigualable. 
+                Con una pasión contagiosa por el café y un enfoque meticuloso en la atención al cliente, Sandra ha creado un lugar donde cada taza cuenta una historia. 
+                Su arduo trabajo y dedicación han convertido a Isabelle en un símbolo de excelencia y calidez en la comunidad local.</p>
+        </div>
+    </section>
+    
+    <!--CONTACTO-->
+    <section class="contacto" id="contacto">
+        <div class="social">
+            <a href="https://www.facebook.com/profile.php?id=61552994519170"><i class='bx bxl-facebook'></i></a>
+            <a href="https://instagram.com/isabelle.cafeteria?igshid=MzRlODBiNWFlZA=="><i class='bx bxl-instagram'></i></a>
+        </div>
+        <div class="links">
+            <a href="#">Politica de Privacidad</a>
+            <a href="#">Terminos de nosotros</a>
+            <a href="#">Nuestra Compañia</a>
+        </div>
+        <p>&#169; CafeteriaIsabelle Todos los Derechos Reservados</p>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
