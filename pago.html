@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pago</title>
+    <link rel="stylesheet" href="css/estilopago.css">
+</head>
+<body>
+    <!-- Pestaña de Pago -->
+     <div class="payment-tab" id="payment-tab">
+                        <h2>Selecciona tu método de pago</h2>
+                        <div class="payment-options">
+                            <label>
+                                <input type="radio" name="payment-method" value="yape">
+                                YAPE
+                            </label>
+                            <label>
+                                <input type="radio" name="payment-method" value="plin">
+                                PLIN
+                            </label>
+                            <label>
+                                <input type="radio" name="payment-method" value="tarjeta">
+                                Tarjeta de Crédito
+                            </label>
+                        </div>
+                        <div id="yape-image" style="display: none;">
+                            <img src="img/pago/yape.PNG" alt="YAPE">
+                        </div>
+                        <div id="plin-image" style="display: none;">
+                            <img src="img/pago/plin.PNG" alt="PLIN">
+                        </div>
+                        <div id="credit-card-info" style="display: none;">
+                            <label for="owner-name">Nombre del Propietario:</label>
+                            <input type="text" id="owner-name"><br>
+                            <label for="card-number">Número de Tarjeta:</label>
+                            <input type="int" id="card-number"><br>
+                            <label for="expiry-date">Fecha de Vencimiento:</label>
+                            <input type="date" id="expiry-date"><br>
+                            <label for="cvv">CVV:</label>
+                            <input type="int" id="cvv"><br>
+                        </div>
+                        <button class="btn-pay" onclick="completePurchase()">Pagar</button>
+                    </div>
+                
+                    <script>
+                        // Obtén los elementos HTML de las imágenes y campos de entrada
+                        const yapeImage = document.getElementById("yape-image");
+                        const plinImage = document.getElementById("plin-image");
+                        const creditCardInfo = document.getElementById("credit-card-info");
+                
+                        // Obtén los elementos HTML de los radio buttons
+                        const paymentOptions = document.getElementsByName("payment-method");
+                
+                        // Agrega un controlador de eventos para cada radio button
+                        paymentOptions.forEach((option) => {
+                            option.addEventListener("click", () => {
+                                // Oculta todos los elementos antes de mostrar uno
+                                yapeImage.style.display = "none";
+                                plinImage.style.display = "none";
+                                creditCardInfo.style.display = "none";
+                
+                                // Muestra el elemento correspondiente según la opción seleccionada
+                                if (option.value === "yape") {
+                                    yapeImage.style.display = "block";
+                                } else if (option.value === "plin") {
+                                    plinImage.style.display = "block";
+                                } else if (option.value === "tarjeta") {
+                                    creditCardInfo.style.display = "block";
+                                }
+                            });
+                        });
+                     
+                        function completePurchase() {
+    alert('Compra realizada');
+
+    // Redirige a la pestaña de "home"
+    window.location.href = 'index.php';
+
+    // Limpia el contenido del carrito
+    var cartContent = document.getElementsByClassName('cart-content')[0];
+    while (cartContent.hasChildNodes()) {
+        cartContent.removeChild(cartContent.firstChild);
+    }
+
+    // Actualiza el total (debes tener una función llamada updatetotal)
+    updatetotal();
+}
+                    </script>
+
+                    
+</body>
+</html>
